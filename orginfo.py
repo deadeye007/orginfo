@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import csv, datetime, getopt, os, sys
+import configparser, csv, datetime, getopt, os, sys
 
 def logo():
     print('''
@@ -28,10 +28,12 @@ def main(argv):
     # Variables
     choice = ""
     emails = []
-    gam = "/root/bin/gam/gam"
     read = ""
     write = ""
 
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    gam = config['gam']['gam']
     # Check for the correct arguments
     try:
         opts, args = getopt.getopt(argv,"dhi:rv",["doit","help","input","read","version"])

@@ -1,0 +1,6 @@
+[gam]
+gam = /path/to/gam
+
+# Uncomment for Windows configuration
+# [gam]
+# gam = C:\path\to\gam.exe
